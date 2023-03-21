@@ -1,0 +1,14 @@
+const express = require("express");
+const router = express.Router();
+const DummyJsonPostController = require("../controllers/dummyJsonPostController");
+router.post("/post", DummyJsonPostController.createDummyPost);
+router.get("/post/limit", DummyJsonPostController.limitSkipDummyPost);
+router.get("/post/select", DummyJsonPostController.selectDummyPost);
+router.get("/post/title", DummyJsonPostController.selectTitleAllPost);
+router.get("/post/random", DummyJsonPostController.randomDummyPost);
+router.get("/post", DummyJsonPostController.findAllDummyPost);
+router.get("/post/search", DummyJsonPostController.searchDummyPost);
+router.get("/post/:id", DummyJsonPostController.findOneDummyPost);
+router.put("/post/:id", DummyJsonPostController.updateDummyPost);
+router.delete("/post/:id", DummyJsonPostController.deleteDummyPost);
+module.exports = router;
